@@ -1,32 +1,32 @@
 export default [
   {
-    src: "1.jpg"
+    src: "1.jpeg"
   },
   {
-    src: "2.jpg"
+    src: "2.jpeg"
   },
   {
-    src: "3.jpg"
+    src: "3.jpeg"
   },
   {
-    src: "4.jpg"
+    src: "4.jpeg"
   },
   {
-    src: "5.jpg"
+    src: "5.jpeg"
   },
   {
-    src: "6.jpg"
+    src: "6.jpeg"
   },
   {
-    src: "7.jpg"
+    src: "7.jpeg"
   },
   {
-    src: "8.jpg"
+    src: "8.jpeg"
   },
   {
-    src: "9.jpg"
+    src: "9.jpeg"
   },
   {
-    src: "10.jpg"
+    src: "10.jpeg"
   }
 ];
