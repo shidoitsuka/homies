@@ -2,7 +2,7 @@
   <v-layout class="mx-auto">
     <v-row no-gutters style="width: 99vw;">
       <v-col cols="12" class="half-section">
-        <v-img class="main-header-image" src="/img/homies.jpg" aspect-ratio="1">
+        <v-img class="main-header-image" src="/img/homies-blur.jpg" aspect-ratio="1">
           <v-row
             class="main-header-text fill-height text-center"
             align="center"
@@ -161,11 +161,14 @@ export default {
   color: #AA6F73
   border-bottom: 1px solid #AA6F73
   display: inline-block
+  font-family: 'Architects Daughter', cursive
+  font-size: 2rem
 .section-image
   width: 100%
   border-radius: 10pt
 .about-us-description
   background: #F6E0B5
+  font-family: 'Architects Daughter', cursive
   color: #AA6F73
   padding: 10px
   text-align: justify
