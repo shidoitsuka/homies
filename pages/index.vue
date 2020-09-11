@@ -14,6 +14,7 @@
                   class="main-header-text-bottom"
                   :loop="true"
                   :typeSpeed="100"
+                  :backSpeed="100"
                   :shuffle="false"
                   :contentType="'null'"
                   :strings="[
@@ -22,7 +23,7 @@
                     'Enemy',
                     'Gang',
                     'Besties',
-                    'Homies'
+                    'Homies ^5000'
                   ]"
                 >
                   <span class="typing"></span>
