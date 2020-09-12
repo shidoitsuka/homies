@@ -104,7 +104,7 @@
                 v-ripple
                 v-for="(photos, index) in ig"
                 :key="index"
-                :src="photos.imageUrl"
+                :src="photos.node.display_url"
               />
             </v-carousel>
           </v-col>
@@ -128,23 +128,22 @@
 
 <script>
 import photos from "~/assets/images.js";
-import Instagram from "user-instagram";
+import Instagram from "instagrammer";
 export default {
   data() {
     return {
       language: null,
-      images: photos,
-      ig: Instagram("standinshd").then((ig) => ig.posts)
+      images: photos
     };
   },
   async asyncData() {
     const random = arr => arr[Math.floor(Math.random() * arr.length)];
     // prettier-ignore
     // const user = random(["safakboi", "standinshd", "antjedtta_", "thaliacintani", "jeslyn_oonly", "rachmatragil_", "bagas_sb17"]);
-    // const ig = await Instagram("standinshd");
-    // return {
-    //   ig: ig.posts
-    // };
+    const ig = await Instagram.profile("standinshd");
+    return {
+      ig
+    };
   }
   // async asyncData({ $content }) {
   //   const page = await $content("hello").fetch();
