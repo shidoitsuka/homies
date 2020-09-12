@@ -23,26 +23,14 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#AA6F73" },
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
-      {
-        hid: "description",
-        name: "description",
-        content: "A site about our small team!"
-      },
-      {
-        hid: "og:description",
-        name: "og:description",
-        content: "A site about our small team!"
-      },
+      { hid: "description", name: "description", content: "A site about our small team!" },
+      { hid: "og:description", name: "og:description", content: "A site about our small team!" },
       { hid: "og:image", name: "og:image", content: "/img/homies.jpg" },
       { hid: "og:title", name: "og:title", content: "Homies" }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      {
-        rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat&family=Montserrat:wght@500&display=swap"
-      }
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat&family=Montserrat:wght@500&display=swap" }
     ]
   },
   /*
@@ -53,7 +41,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ["~/plugins/vue-typed.js"],
+  plugins: ["~/plugins/vue-typed.js", "~/plugins/instagram-post.js"],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components

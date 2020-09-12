@@ -1,13 +1,17 @@
 <template>
   <v-layout class="mx-auto">
     <v-row no-gutters style="width: 99vw;">
-      <v-col cols="12" class="half-section">
-        <v-img class="main-header-image" src="/img/homies-blur.jpg" aspect-ratio="1">
+      <v-col cols="12" class="main-section">
+        <v-img
+          class="main-header-image"
+          src="/img/homies-blur.jpg"
+          aspect-ratio="1"
+        >
           <v-row
             class="main-header-text fill-height text-center"
             align="center"
           >
-            <v-col>
+            <v-col cols="12">
               <h5 class="main-header-text-top">We Are</h5>
               <div class="mx-auto text-center d-flex justify-center">
                 <vue-typed-js
@@ -38,10 +42,10 @@
           <v-col cols="12">
             <h3 class="section-title">About Us</h3>
           </v-col>
-          <v-col cols="12">
+          <v-col cols="12" md="4">
             <v-img class="section-image" src="/img/homies.jpg" height="200px" />
           </v-col>
-          <v-col cols="12">
+          <v-col cols="12" md="8">
             <v-tabs
               grow
               background-color="#EEA990"
@@ -83,7 +87,7 @@
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="12" class="full-section section">
+      <v-col cols="12" class="gallery-section section">
         <v-row>
           <v-col cols="12">
             <h3 class="section-title">Gallery</h3>
@@ -98,35 +102,47 @@
             >
               <v-carousel-item
                 v-ripple
-                v-for="(photos, index) in images"
+                v-for="(photos, index) in ig"
                 :key="index"
-                :src="'/img/gallery/' + photos.src"
+                :src="photos.imageUrl"
               />
             </v-carousel>
           </v-col>
         </v-row>
       </v-col>
+      <v-col cols="12">
+        <v-footer absolute class="footer">
+          <v-row>
+            <v-col>
+              <h3>
+                &copy; H O M I E S |
+                <a class="grey--text" href="mailto:homies@comebackho.me">homies@comebackho.me</a>
+              </h3>
+            </v-col>
+          </v-row>
+        </v-footer>
+      </v-col>
     </v-row>
-    <v-footer absolute class="footer">
-      <v-row>
-        <v-col>
-          <h3>
-            &copy; H O M I E S |
-            <a class="grey--text" href="mailto:homies@comebackho.me">homies@comebackho.me</a>
-          </h3>
-        </v-col>
-      </v-row>
-    </v-footer>
   </v-layout>
 </template>
 
 <script>
 import photos from "~/assets/images.js";
+import Instagram from "user-instagram";
 export default {
   data() {
     return {
       language: null,
       images: photos
+    };
+  },
+  async asyncData() {
+    const random = arr => arr[Math.floor(Math.random() * arr.length)];
+    // prettier-ignore
+    const user = random(["safakboi", "standinshd", "antjedtta_", "thaliacintani", "jeslyn_oonly", "rachmatragil_", "bagas_sb17"]);
+    const ig = await Instagram(user);
+    return {
+      ig: ig.posts
     };
   }
   // async asyncData({ $content }) {
@@ -139,10 +155,14 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.half-section
-  height: 50vh
-.full-section
+.main-section
   height: 100vh
+  @media only screen and (max-width: 960px)
+    height: 50vh
+.gallery-section
+  height: 125vh
+  @media only screen and (max-width: 960px)
+    height: 100vh
 .main-header-image
   height: 100%
 .main-header-text

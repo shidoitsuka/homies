@@ -9,6 +9,7 @@ yarn-error.log*
 
 # Runtime data
 pids
+package-lock.json
 *.pid
 *.seed
 *.pid.lock
