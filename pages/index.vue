@@ -104,7 +104,7 @@
                 v-ripple
                 v-for="(photos, index) in images"
                 :key="index"
-                :src="'/img/gallery' + photos.src"
+                :src="'/img/gallery/' + photos.src"
               />
             </v-carousel>
           </v-col>
