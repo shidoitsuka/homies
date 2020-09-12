@@ -139,8 +139,8 @@ export default {
   async asyncData() {
     const random = arr => arr[Math.floor(Math.random() * arr.length)];
     // prettier-ignore
-    // const user = random(["safakboi", "standinshd", "antjedtta_", "thaliacintani", "jeslyn_oonly", "rachmatragil_", "bagas_sb17"]);
-    const ig = await Instagram.profile("standinshd");
+    const user = random(["safakboi", "standinshd", "antjedtta_", "thaliacintani", "jeslyn_oonly", "rachmatragil_", "bagas_sb17"]);
+    const ig = await Instagram(user);
     return {
       ig
     };
