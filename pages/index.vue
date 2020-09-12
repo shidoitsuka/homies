@@ -147,8 +147,8 @@ export default {
       return {
         ig: ig.posts
       };
-  */
-  }
+    }
+ */
 };
 </script>
 
