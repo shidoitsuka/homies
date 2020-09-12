@@ -102,9 +102,9 @@
             >
               <v-carousel-item
                 v-ripple
-                v-for="(photos, index) in ig"
+                v-for="(photos, index) in images"
                 :key="index"
-                :src="photos.node.display_url"
+                :src="'/img/gallery' + photos.src"
               />
             </v-carousel>
           </v-col>
@@ -116,7 +116,9 @@
             <v-col>
               <h3>
                 &copy; H O M I E S |
-                <a class="grey--text" href="mailto:homies@comebackho.me">homies@comebackho.me</a>
+                <a class="grey--text" href="mailto:homies@comebackho.me"
+                  >homies@comebackho.me</a
+                >
               </h3>
             </v-col>
           </v-row>
@@ -128,7 +130,6 @@
 
 <script>
 import photos from "~/assets/images.js";
-import Instagram from "instagrammer";
 export default {
   data() {
     return {
@@ -136,21 +137,18 @@ export default {
       images: photos
     };
   },
-  async asyncData() {
-    const random = arr => arr[Math.floor(Math.random() * arr.length)];
-    // prettier-ignore
-    const user = random(["safakboi", "standinshd", "antjedtta_", "thaliacintani", "jeslyn_oonly", "rachmatragil_", "bagas_sb17"]);
-    const ig = await Instagram(user);
-    return {
-      ig
-    };
+  // TODO: FETCH INSTAGRAM IMAGES
+  /*
+    async asyncData() {
+      const random = arr => arr[Math.floor(Math.random() * arr.length)];
+      // prettier-ignore
+      const user = random(["safakboi", "standinshd", "antjedtta_", "thaliacintani", "jeslyn_oonly", "rachmatragil_", "bagas_sb17"]);
+      const ig = await Instagram(user);
+      return {
+        ig: ig.posts
+      };
+  */
   }
-  // async asyncData({ $content }) {
-  //   const page = await $content("hello").fetch();
-  //   return {
-  //     page
-  //   };
-  // }
 };
 </script>
 
